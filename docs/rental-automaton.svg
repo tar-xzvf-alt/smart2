@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="966" viewBox="0 0 1040 966"
+     role="img" aria-labelledby="title description">
+  <title id="title">Автомат договора аренды</title>
+  <desc id="description">Нарисованный вручную граф аренды, таблица переходов и выходов и русская расшифровка обозначений. Начальное состояние ОН, критическое состояние РД.</desc>
+  <defs>
+    <style>
+      text { font-family: "DejaVu Sans", sans-serif; fill: #263330; font-size: 14px; }
+      .title { font-size: 27px; font-weight: bold; }
+      .section { font-size: 18px; font-weight: bold; }
+      .note { font-size: 13px; fill: #52625d; }
+      .edge { fill: none; stroke: #355953; stroke-width: 1.5; marker-end: url(#arrow); }
+      .node { fill: #e9f0ec; stroke: #355953; stroke-width: 1.5; }
+      .terminal { fill: none; stroke: #355953; stroke-width: 1; }
+      .critical { fill: #f9e3de; stroke: #9b5349; }
+      .grid { fill: none; stroke: #d0d9d4; }
+      .key { font-weight: bold; }
+      .dash { fill: #738078; }
+    </style>
+    <marker id="arrow" viewBox="0 0 8 8" refX="8" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 Z" fill="#355953"/>
+    </marker>
+  </defs>
+  <rect width="1040" height="966" fill="#fbfaf6"/>
+  <text class="title" x="40" y="46">Автомат договора аренды</text>
+  <text class="note" x="40" y="72">Подписи стрелок — вход / выход. Варианты перехода по МГ пояснены под таблицей.</text>
+
+  <!-- Рёбра, координаты и подписи заданы вручную. -->
+  <g aria-label="Граф переходов">
+    <path class="edge" d="M49 175 H74"/>
+    <circle cx="46" cy="175" r="3" fill="#355953"/>
+    <path class="edge" d="M146 175 H269"/>
+    <path class="edge" d="M283 157 C253 97 357 97 327 157"/>
+    <path class="edge" d="M339 166 H491"/>
+    <path class="edge" d="M491 184 H339"/>
+    <path class="edge" d="M561 175 H754"/>
+    <path class="edge" d="M305 199 V289 Q305 305 321 305 H489"/>
+    <path class="edge" d="M525 199 V281"/>
+    <path class="edge" d="M561 305 H689"/>
+    <path class="edge" d="M761 305 H879"/>
+
+    <g text-anchor="middle">
+      <text x="207" y="163">ВН/АК</text>
+      <text x="305" y="101">ОП/УП · ПР/ПД · МГ/НП</text>
+      <text x="415" y="155">МГ/НП</text>
+      <text x="415" y="207">ОП/УП</text>
+      <text x="658" y="163">МГ/РД</text>
+      <text x="400" y="293">КА/НО</text>
+      <text x="563" y="246">КА/НО</text>
+      <text x="625" y="293">РО/СР</text>
+      <text x="820" y="293">ИР/ЗВ</text>
+    </g>
+    <g text-anchor="middle" dominant-baseline="central" class="key">
+      <ellipse class="node" cx="110" cy="175" rx="36" ry="24"/><text x="110" y="175">ОН</text>
+      <ellipse class="node" cx="305" cy="175" rx="36" ry="24"/><text x="305" y="175">БД</text>
+      <ellipse class="node" cx="525" cy="175" rx="36" ry="24"/><text x="525" y="175">СД</text>
+      <ellipse class="node critical" cx="790" cy="175" rx="36" ry="24"/>
+      <ellipse class="terminal" cx="790" cy="175" rx="31" ry="19"/><text x="790" y="175">РД</text>
+      <ellipse class="node" cx="525" cy="305" rx="36" ry="24"/><text x="525" y="305">ОС</text>
+      <ellipse class="node" cx="725" cy="305" rx="36" ry="24"/><text x="725" y="305">РЗ</text>
+      <ellipse class="node" cx="915" cy="305" rx="36" ry="24"/>
+      <ellipse class="terminal" cx="915" cy="305" rx="31" ry="19"/><text x="915" y="305">ЗК</text>
+    </g>
+    <text class="note" x="40" y="353">Двойной контур — терминальное состояние. Петли отклонения НД на графе опущены.</text>
+  </g>
+
+  <text class="section" x="40" y="390">Таблица переходов и выходов</text>
+  <g aria-label="Входы по строкам, состояния по столбцам, в ячейках состояние назначения и выход">
+    <path fill="#e9f0ec" d="M40 405 H1000 V435 H40 Z"/>
+    <path fill="#f3f5f0" d="M40 435 H202 V645 H40 Z"/>
+    <path class="grid" d="M40 405 H1000 V645 H40 Z
+      M202 405 V645 M316 405 V645 M430 405 V645 M544 405 V645
+      M658 405 V645 M772 405 V645 M886 405 V645
+      M40 435 H1000 M40 465 H1000 M40 495 H1000 M40 525 H1000
+      M40 555 H1000 M40 585 H1000 M40 615 H1000"/>
+    <g text-anchor="middle">
+      <!-- Каждая ячейка — отдельный текст с абсолютными координатами. -->
+      <g class="key">
+        <text x="121" y="425">Вход / состояние</text>
+        <text x="259" y="425">ОН</text>
+        <text x="373" y="425">БД</text>
+        <text x="487" y="425">СД</text>
+        <text x="601" y="425">РД</text>
+        <text x="715" y="425">ОС</text>
+        <text x="829" y="425">РЗ</text>
+        <text x="943" y="425">ЗК</text>
+      </g>
+      <text class="key" x="121" y="455">ВН</text>
+      <text x="259" y="455">БД/АК</text>
+      <text class="dash" x="373" y="455">—</text>
+      <text class="dash" x="487" y="455">—</text>
+      <text class="dash" x="601" y="455">—</text>
+      <text class="dash" x="715" y="455">—</text>
+      <text class="dash" x="829" y="455">—</text>
+      <text class="dash" x="943" y="455">—</text>
+
+      <text class="key" x="121" y="485">ОП</text>
+      <text class="dash" x="259" y="485">—</text>
+      <text x="373" y="485">БД/УП</text>
+      <text x="487" y="485">БД/УП</text>
+      <text class="dash" x="601" y="485">—</text>
+      <text class="dash" x="715" y="485">—</text>
+      <text class="dash" x="829" y="485">—</text>
+      <text class="dash" x="943" y="485">—</text>
+
+      <text class="key" x="121" y="515">ПР</text>
+      <text class="dash" x="259" y="515">—</text>
+      <text x="373" y="515">БД/ПД</text>
+      <text class="dash" x="487" y="515">—</text>
+      <text class="dash" x="601" y="515">—</text>
+      <text class="dash" x="715" y="515">—</text>
+      <text class="dash" x="829" y="515">—</text>
+      <text class="dash" x="943" y="515">—</text>
+
+      <text class="key" x="121" y="545">МГ</text>
+      <text class="dash" x="259" y="545">—</text>
+      <text x="373" y="545">БД/НП · СД/НП</text>
+      <text x="487" y="545">РД/РД</text>
+      <text class="dash" x="601" y="545">—</text>
+      <text class="dash" x="715" y="545">—</text>
+      <text class="dash" x="829" y="545">—</text>
+      <text class="dash" x="943" y="545">—</text>
+
+      <text class="key" x="121" y="575">КА</text>
+      <text class="dash" x="259" y="575">—</text>
+      <text x="373" y="575">ОС/НО</text>
+      <text x="487" y="575">ОС/НО</text>
+      <text class="dash" x="601" y="575">—</text>
+      <text class="dash" x="715" y="575">—</text>
+      <text class="dash" x="829" y="575">—</text>
+      <text class="dash" x="943" y="575">—</text>
+
+      <text class="key" x="121" y="605">РО</text>
+      <text class="dash" x="259" y="605">—</text>
+      <text class="dash" x="373" y="605">—</text>
+      <text class="dash" x="487" y="605">—</text>
+      <text class="dash" x="601" y="605">—</text>
+      <text x="715" y="605">РЗ/СР</text>
+      <text class="dash" x="829" y="605">—</text>
+      <text class="dash" x="943" y="605">—</text>
+
+      <text class="key" x="121" y="635">ИР</text>
+      <text class="dash" x="259" y="635">—</text>
+      <text class="dash" x="373" y="635">—</text>
+      <text class="dash" x="487" y="635">—</text>
+      <text class="dash" x="601" y="635">—</text>
+      <text class="dash" x="715" y="635">—</text>
+      <text x="829" y="635">ЗК/ЗВ</text>
+      <text class="dash" x="943" y="635">—</text>
+    </g>
+  </g>
+  <g class="note">
+    <text class="note" x="40" y="668">Ячейка: следующее состояние / выход. Прочерк или невыполненное условие: состояние не меняется, выход НД.</text>
+    <text class="note" x="40" y="690">При МГ исход определяется долгом после начисления: 0 месяцев → БД, 1 → СД, 2 → РД.</text>
+    <text class="note" x="40" y="712">В момент границы сначала учитывается ОП. В дату окончания (КА) новый взнос не начисляется.</text>
+  </g>
+
+  <path class="grid" d="M40 734 H1000"/>
+  <g aria-label="Расшифровка обозначений">
+    <text class="section" x="40" y="764">Состояния</text>
+    <text class="section" x="345" y="764">Входы</text>
+    <text class="section" x="704" y="764">Выходы</text>
+    <text x="40" y="790"><tspan class="key">ОН</tspan> — ожидание стартового платежа</text>
+    <text x="40" y="810"><tspan class="key">БД</tspan> — аренда без долга</text>
+    <text x="40" y="830"><tspan class="key">СД</tspan> — аренда с долгом за один месяц</text>
+    <text x="40" y="850"><tspan class="key">РД</tspan> — разрыв договора (критическое)</text>
+    <text x="40" y="870"><tspan class="key">ОС</tspan> — ожидание осмотра</text>
+    <text x="40" y="890"><tspan class="key">РЗ</tspan> — расчёт залога подготовлен</text>
+    <text x="40" y="910"><tspan class="key">ЗК</tspan> — договор закрыт</text>
+    <text x="345" y="790"><tspan class="key">ВН</tspan> — внести первый взнос и залог</text>
+    <text x="345" y="810"><tspan class="key">ОП</tspan> — оплатить целое число взносов</text>
+    <text x="345" y="830"><tspan class="key">ПР</tspan> — продлить по согласию сторон</text>
+    <text x="345" y="850"><tspan class="key">МГ</tspan> — наступила месячная граница</text>
+    <text x="345" y="870"><tspan class="key">КА</tspan> — наступил конец аренды</text>
+    <text x="345" y="890"><tspan class="key">РО</tspan> — подтверждён результат осмотра</text>
+    <text x="345" y="910"><tspan class="key">ИР</tspan> — исполнить расчёт залога</text>
+    <text x="704" y="790"><tspan class="key">АК</tspan> — аренда активирована</text>
+    <text x="704" y="810"><tspan class="key">УП</tspan> — платёж учтён</text>
+    <text x="704" y="830"><tspan class="key">ПД</tspan> — срок продлён</text>
+    <text x="704" y="850"><tspan class="key">НП</tspan> — взнос начислен</text>
+    <text x="704" y="870"><tspan class="key">РД</tspan> — договор разорван, залог удержан</text>
+    <text x="704" y="890"><tspan class="key">НО</tspan> — ожидается осмотр</text>
+    <text x="704" y="910"><tspan class="key">СР</tspan> — суммы по залогу рассчитаны</text>
+    <text x="704" y="930"><tspan class="key">ЗВ</tspan> — расчёт завершён</text>
+    <text x="704" y="950"><tspan class="key">НД</tspan> — действие отклонено</text>
+  </g>
+</svg>
