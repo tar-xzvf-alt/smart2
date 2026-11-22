@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.coverage
+out/
+cache/
+broadcast/
+.env
+.env.*

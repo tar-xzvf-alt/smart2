@@ -1,0 +1,8 @@
+{
+  "terms": {"rent": 20000, "deposit": 30000, "months": 3, "month": "1"},
+  "batches": [
+    {"at": 0, "commands": [{"action": "start", "amount": 50000}]},
+    {"at": 2, "commands": []},
+    {"at": "5/2", "commands": [{"action": "pay", "amount": 40000}]}
+  ]
+}
